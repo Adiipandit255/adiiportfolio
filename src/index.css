@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  padding:0;
+  background:#05010d;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Resume Border Animation */
+@keyframes spin {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes ringSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ring-cyan,
+.ring-purple {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.ring-cyan {
+  width: 340px;
+  height: 340px;
+
+  background: conic-gradient(
+    transparent 0deg,
+    transparent 280deg,
+    #00e5ff 320deg,
+    #00e5ff 360deg
+  );
+
+  animation: ringSpin 4s linear infinite;
+}
+
+.ring-purple {
+  width: 390px;
+  height: 390px;
+
+  background: conic-gradient(
+    transparent 0deg,
+    transparent 240deg,
+    #d946ef 310deg,
+    #d946ef 360deg
+  );
+
+  animation: ringSpin 7s linear infinite reverse;
+}
+
+.ring-cyan::before,
+.ring-purple::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #05010d;
+}
+/* Reverse Ring Rotation */
+@keyframes rotateRing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animated-ring{
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 6px;
+
+  background: conic-gradient(
+  rgb(104, 0, 71) 0deg 60deg,
+  rgb(113, 5, 95) 60deg 120deg,
+  rgb(103, 1, 100) 120deg 180deg,
+  rgb(115, 1, 113) 180deg 240deg,
+  rgb(134, 2, 134) 240deg 300deg,
+  rgb(92, 2, 84) 300deg 360deg
+);
+
+  animation: rotateRing 3.5s linear infinite;
+
+ 
+}
+
+.animated-ring::before{
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #05010d;
+}
+
