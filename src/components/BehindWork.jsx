@@ -88,7 +88,7 @@ const BehindWork = () => {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-2 gap-3 sm:gap-20 items-center">
 
           {/* LEFT */}
           <motion.div
@@ -99,7 +99,7 @@ const BehindWork = () => {
           >
 
             <div className="relative flex items-center justify-center">
-<div className="relative flex items-center justify-center w-[280px] h-[280px] sm:w-[350px] sm:h-[350px]">
+<div className="relative flex items-center justify-center w-[110px] h-[110px] xs:w-[130px] xs:h-[130px] sm:w-[220px] sm:h-[220px] md:w-[280px] md:h-[280px]">
 
   <div className="ring-purple"></div>
 
@@ -108,31 +108,31 @@ const BehindWork = () => {
   <img
     src={developer}
     alt="developer"
-    className="relative z-20 w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] rounded-full object-cover border-[3px] border-cyan-400"
+    className="relative z-20 w-[100px] h-[100px] xs:w-[120px] xs:h-[120px] sm:w-[200px] sm:h-[200px] md:w-[260px] md:h-[260px] rounded-full object-cover border-[3px] border-cyan-400"
   />
 
 </div>
             </div>
 
-            <h2 className="mt-12 text-4xl font-bold bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <h2 className="mt-4 sm:mt-12 text-sm sm:text-2xl md:text-4xl font-bold bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent text-center">
               Aditya Sharma
             </h2>
 
-            <p className="text-cyan-400 tracking-[5px] uppercase mt-3">
+            <p className="text-cyan-400 tracking-[2px] sm:tracking-[5px] text-[8px] sm:text-sm uppercase mt-1 sm:mt-3 text-center">
               Artificial Intelligence
             </p>
 
-            <div className="flex gap-3 mt-6 flex-wrap justify-center">
+            <div className="flex gap-1 sm:gap-3 mt-3 sm:mt-6 flex-wrap justify-center">
 
-              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm">
-                🚀 Web Developer
+              <span className="px-1.5 py-0.5 sm:px-4 sm:py-2 rounded-full border border-white/10 bg-white/5 text-[7px] xs:text-[10px] sm:text-sm whitespace-nowrap">
+                🚀 Web Dev
               </span>
 
-              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm">
+              <span className="px-1.5 py-0.5 sm:px-4 sm:py-2 rounded-full border border-white/10 bg-white/5 text-[7px] xs:text-[10px] sm:text-sm">
                 🇮🇳 India
               </span>
 
-              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm">
+              <span className="px-1.5 py-0.5 sm:px-4 sm:py-2 rounded-full border border-white/10 bg-white/5 text-[7px] xs:text-[10px] sm:text-sm whitespace-nowrap">
                 ⚡ Open To Work
               </span>
 
@@ -146,31 +146,31 @@ const BehindWork = () => {
             transition={{ duration: 1 }}
           >
 
-            <p className="uppercase tracking-[5px] text-gray-500 text-fluid-xs sm:text-fluid-sm mb-4 text-center">
+            <p className="uppercase tracking-[2px] sm:tracking-[5px] text-gray-500 text-[8px] sm:text-xs mb-2 sm:mb-4 text-center">
               THE PERSON
             </p>
 
-            <h1 className="text-fluid-2xl md:text-fluid-4xl font-black mb-10 text-center bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <h1 className="text-fluid-xl sm:text-fluid-4xl font-black mb-4 sm:mb-10 text-center bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
               Behind The Work.
             </h1>
 
-            <div className="space-y-3 w-full">
+            <div className="space-y-1.5 sm:space-y-3 w-full">
 
               {cards.map((card, index) => (
                 <div
                   key={index}
-                  className="group flex items-center gap-2 p-2 rounded-[24px] border border-purple-500/20 bg-[#090414] hover:border-cyan-400/40 transition-all duration-500"
+                  className="group flex items-center gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-[16px] sm:rounded-[24px] border border-purple-500/20 bg-[#090414] hover:border-cyan-400/40 transition-all duration-500"
                 >
 
-                  <div className="text-cyan-400 text-xs w-6 text-center">
+                  <div className="text-cyan-400 text-[8px] sm:text-xs w-3 sm:w-6 text-center">
                     {card.symbol}
                   </div>
 
-                  <div className="w-8 h-8 rounded-xs border border-purple-500/30 bg-purple-500/10 flex items-center justify-center">
+                  <div className="w-5 h-5 sm:w-8 sm:h-8 rounded-xs border border-purple-500/30 bg-purple-500/10 flex items-center justify-center text-[10px] sm:text-sm">
                     {card.icon}
                   </div>
 
-                  <p className="text-gray-300 leading-8 text-[15px]">
+                  <p className="text-gray-300 leading-normal sm:leading-8 text-[9px] xs:text-[11px] sm:text-[15px]">
                     {card.text}
                   </p>
 

@@ -125,28 +125,28 @@ const Certifications = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16">
 
           <div className="rounded-3xl border border-cyan-500/20 bg-white/[0.03] p-6 text-center">
-            <h2 className="text-4xl font-bold text-cyan-300">7+</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-cyan-300">7+</h2>
             <p className="text-gray-400 mt-2">
               Certificates
             </p>
           </div>
 
           <div className="rounded-3xl border border-cyan-500/20 bg-white/[0.03] p-6 text-center">
-            <h2 className="text-4xl font-bold text-cyan-300">4</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-cyan-300">4</h2>
             <p className="text-gray-400 mt-2">
               NPTEL Courses
             </p>
           </div>
 
           <div className="rounded-3xl border border-cyan-500/20 bg-white/[0.03] p-6 text-center">
-            <h2 className="text-4xl font-bold text-cyan-300">94%</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-cyan-300">94%</h2>
             <p className="text-gray-400 mt-2">
               Highest Score
             </p>
           </div>
 
           <div className="rounded-3xl border border-cyan-500/20 bg-white/[0.03] p-6 text-center">
-            <h2 className="text-4xl font-bold text-cyan-300">
+            <h2 className="text-2xl sm:text-3xl font-bold text-cyan-300">
               Elite
             </h2>
             <p className="text-gray-400 mt-2">

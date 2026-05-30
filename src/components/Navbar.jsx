@@ -21,7 +21,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="text-3xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent transition-transform duration-300 hover:scale-105"
+          className="text-2xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent transition-transform duration-300 hover:scale-105"
         >
           Adii.
         </Link>

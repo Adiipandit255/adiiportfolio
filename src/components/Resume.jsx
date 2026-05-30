@@ -188,7 +188,7 @@ const Resume = () => {
               className="rounded-[24px] border border-cyan-500/20 bg-white/[0.03] backdrop-blur-xl p-8"
             >
 
-              <h3 className="text-3xl font-bold text-cyan-300 mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-4">
                 Education
               </h3>
 
@@ -211,7 +211,7 @@ const Resume = () => {
               className="rounded-[24px] border border-cyan-500/20 bg-white/[0.03] backdrop-blur-xl p-8"
             >
 
-              <h3 className="text-3xl font-bold text-cyan-300 mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-4">
                 Experience
               </h3>
 
@@ -234,7 +234,7 @@ const Resume = () => {
               className="rounded-[24px] border border-cyan-500/20 bg-white/[0.03] backdrop-blur-xl p-8"
             >
 
-              <h3 className="text-3xl font-bold text-cyan-300 mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-4">
                 Skills
               </h3>
 
@@ -253,7 +253,7 @@ const Resume = () => {
               className="rounded-[24px] border border-cyan-500/20 bg-white/[0.03] backdrop-blur-xl p-8"
             >
 
-              <h3 className="text-3xl font-bold text-cyan-300 mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-4">
                 Projects
               </h3>
 

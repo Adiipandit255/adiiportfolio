@@ -32,7 +32,7 @@ const WhoIAm = () => {
       </div>
 
       {/* Main Container */}
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center relative z-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 gap-3 sm:gap-20 items-center relative z-10">
 
         {/* LEFT SIDE */}
         <motion.div
@@ -131,10 +131,10 @@ const WhoIAm = () => {
             </div>
 
             {/* Content */}
-            <div className="p-5 md:p-6 space-y-4 font-mono text-[13px] sm:text-sm md:text-base">
+            <div className="p-3 sm:p-5 md:p-6 space-y-2 sm:space-y-4 font-mono text-[9px] xs:text-[11px] sm:text-sm md:text-base">
 
               {/* Row */}
-              <div className="flex justify-between border-b border-white/5 pb-4">
+              <div className="flex justify-between border-b border-white/5 pb-2 sm:pb-4">
 
                 <span className="text-pink-400">
 
@@ -168,7 +168,7 @@ const WhoIAm = () => {
               </div>
 
               {/* Row */}
-              <div className="flex justify-between border-b border-white/5 pb-4">
+              <div className="flex justify-between border-b border-white/5 pb-2 sm:pb-4">
 
                 <span className="text-pink-400">
 
@@ -176,7 +176,7 @@ const WhoIAm = () => {
 
                 </span>
 
-                <span className="text-gray-300">
+                <span className="text-gray-300 text-right">
 
                   Web Developer
 
@@ -185,7 +185,7 @@ const WhoIAm = () => {
               </div>
 
               {/* Row */}
-              <div className="flex justify-between border-b border-white/5 pb-4">
+              <div className="flex justify-between border-b border-white/5 pb-2 sm:pb-4">
 
                 <span className="text-pink-400">
 
@@ -193,7 +193,7 @@ const WhoIAm = () => {
 
                 </span>
 
-                <span className="text-gray-300">
+                <span className="text-gray-300 text-right">
 
                   Artificial Intelligence
 
@@ -202,7 +202,7 @@ const WhoIAm = () => {
               </div>
 
               {/* Row */}
-              <div className="flex justify-between border-b border-white/5 pb-4">
+              <div className="flex justify-between border-b border-white/5 pb-2 sm:pb-4">
 
                 <span className="text-pink-400">
 
@@ -210,7 +210,7 @@ const WhoIAm = () => {
 
                 </span>
 
-                <span className="text-gray-300">
+                <span className="text-gray-300 text-right">
 
                   Python • Power BI • MongoDB
 
@@ -219,7 +219,7 @@ const WhoIAm = () => {
               </div>
 
               {/* Row */}
-              <div className="flex justify-between border-b border-white/5 pb-4">
+              <div className="flex justify-between border-b border-white/5 pb-2 sm:pb-4">
 
                 <span className="text-pink-400">
 
@@ -227,7 +227,7 @@ const WhoIAm = () => {
 
                 </span>
 
-                <span className="text-cyan-400">
+                <span className="text-cyan-400 text-right">
 
                   Building futuristic web apps
 
@@ -255,7 +255,7 @@ const WhoIAm = () => {
                     repeat: Infinity
                   }}
 
-                  className="px-5 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm"
+                  className="px-2 py-1 sm:px-5 sm:py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[8px] xs:text-[10px] sm:text-sm"
 
                 >
 
@@ -325,7 +325,7 @@ const WhoIAm = () => {
 
             alt="developer2"
 
-            className="w-[250px] sm:w-[320px] md:w-[400px] lg:w-[450px] object-contain relative z-10"
+            className="w-[100px] xs:w-[130px] sm:w-[260px] md:w-[320px] lg:w-[380px] object-contain relative z-10"
 
           />
 

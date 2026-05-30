@@ -155,7 +155,7 @@ const Execution = () => {
         </motion.div>
 
         {/* CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
 
           {cards.map((item, index) => (
 
@@ -185,7 +185,7 @@ const Execution = () => {
                 rotateY: 5
               }}
 
-              className="group h-[240px] rounded-[30px] border border-purple-500/20 bg-[#0b0617] flex flex-col items-center justify-center text-center px-5 relative overflow-hidden"
+              className="group h-[165px] sm:h-[240px] rounded-[18px] sm:rounded-[30px] border border-purple-500/20 bg-[#0b0617] flex flex-col items-center justify-center text-center px-3 sm:px-5 relative overflow-hidden"
 
             >
 
@@ -216,7 +216,7 @@ const Execution = () => {
                   repeat: Infinity
                 }}
 
-                className="w-16 h-16 rounded-full border border-purple-500/30 flex items-center justify-center text-2xl mb-6 relative z-10 bg-white/5"
+                className="w-10 h-10 sm:w-16 sm:h-16 rounded-full border border-purple-500/30 flex items-center justify-center text-lg sm:text-2xl mb-2 sm:mb-6 relative z-10 bg-white/5"
 
               >
 
@@ -236,7 +236,7 @@ const Execution = () => {
                   repeat: Infinity
                 }}
 
-                className="text-3xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent relative z-10"
+                className="text-lg sm:text-3xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent relative z-10"
 
               >
 
@@ -245,7 +245,7 @@ const Execution = () => {
               </motion.h2>
 
               {/* SUBTITLE */}
-              <p className="text-gray-300 text-base mt-4 leading-7 relative z-10">
+              <p className="text-gray-300 text-[9px] xs:text-[11px] sm:text-base mt-2 sm:mt-4 leading-normal sm:leading-7 relative z-10">
 
                 {item.subtitle}
 

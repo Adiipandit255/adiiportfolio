@@ -55,7 +55,7 @@ export default function Skills() {
 
         {/* Core Expertise */}
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-fluid-2xl md:text-fluid-4xl font-bold">
             Core <span className="text-purple-500">Expertise</span>
           </h2>
 
@@ -67,18 +67,18 @@ export default function Skills() {
         </div>
 
         {/* Expertise Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-4 mb-20">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-4 mb-20">
 
           {expertise.map((skill, index) => (
             <div
               key={index}
-              className="group bg-[#0b0223] border border-purple-500/20 rounded-2xl p-5 flex flex-col items-center justify-center hover:border-purple-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all duration-500 hover:-translate-y-2"
+              className="group bg-[#0b0223] border border-purple-500/20 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center hover:border-purple-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all duration-500 hover:-translate-y-2"
             >
-              <div className="text-5xl mb-3 group-hover:scale-110 transition duration-300">
+              <div className="text-3xl sm:text-5xl mb-1.5 sm:mb-3 group-hover:scale-110 transition duration-300">
                 {skill.icon}
               </div>
 
-              <h3 className="text-sm font-medium text-gray-200 text-center">
+              <h3 className="text-[10px] sm:text-sm font-medium text-gray-200 text-center">
                 {skill.name}
               </h3>
             </div>
@@ -87,7 +87,7 @@ export default function Skills() {
 
         {/* Tools */}
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-fluid-2xl md:text-fluid-4xl font-bold">
             Tools <span className="text-purple-500">I Use</span>
           </h2>
 
@@ -99,18 +99,18 @@ export default function Skills() {
         </div>
 
         {/* Tools Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-4">
 
           {tools.map((tool, index) => (
             <div
               key={index}
-              className="group bg-[#0b0223] border border-purple-500/20 rounded-2xl p-5 flex flex-col items-center justify-center hover:border-purple-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all duration-500 hover:-translate-y-2"
+              className="group bg-[#0b0223] border border-purple-500/20 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center hover:border-purple-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all duration-500 hover:-translate-y-2"
             >
-              <div className="text-5xl mb-3 group-hover:scale-110 transition duration-300">
+              <div className="text-3xl sm:text-5xl mb-1.5 sm:mb-3 group-hover:scale-110 transition duration-300">
                 {tool.icon}
               </div>
 
-              <h3 className="text-sm font-medium text-gray-200 text-center">
+              <h3 className="text-[10px] sm:text-sm font-medium text-gray-200 text-center">
                 {tool.name}
               </h3>
             </div>

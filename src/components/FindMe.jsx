@@ -37,7 +37,7 @@ const FindMe = () => {
         </h1>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8">
 
           {/* GitHub */}
           <motion.a
@@ -48,13 +48,13 @@ const FindMe = () => {
             href="https://github.com/Adiipandit255"
             target="_blank"
              rel="noopener noreferrer"
-              className="p-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:border-pink-500/40 transition flex flex-col items-center"
+              className="p-4 sm:p-10 rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:border-pink-500/40 transition flex flex-col items-center"
               >
-                <FaGithub className="text-2xl text-pink-400 mb-3" />
-                 <h2 className="text-2xl font-bold mb-3">
+                <FaGithub className="text-lg sm:text-2xl text-pink-400 mb-1.5 sm:mb-3" />
+                 <h2 className="text-sm sm:text-2xl font-bold mb-1.5 sm:mb-3">
                      GitHub
                       </h2>
-                       <p className="text-gray-400">
+                       <p className="text-gray-405 text-[9px] xs:text-[11px] sm:text-sm text-center">
                         Explore my projects and repositories.
                         </p>
                         </motion.a>
@@ -73,17 +73,17 @@ const FindMe = () => {
 
   rel="noopener noreferrer"
 
-  className="p-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:border-cyan-500/40 transition flex flex-col items-center"
+  className="p-4 sm:p-10 rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:border-cyan-500/40 transition flex flex-col items-center"
 
 >
 
-  <FaLinkedin className="text-2xl text-cyan-400 mb-3" />
+  <FaLinkedin className="text-lg sm:text-2xl text-cyan-400 mb-1.5 sm:mb-3" />
 
-  <h2 className="text-2xl font-bold mb-3">
+  <h2 className="text-sm sm:text-2xl font-bold mb-1.5 sm:mb-3">
     LinkedIn
   </h2>
 
-  <p className="text-gray-400">
+  <p className="text-gray-450 text-[9px] xs:text-[11px] sm:text-sm text-center">
     Connect with me professionally.
   </p>
 
@@ -99,17 +99,17 @@ const FindMe = () => {
 
             href="#"
 
-            className="p-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:border-pink-500/40 transition flex flex-col items-center"
+            className="p-4 sm:p-10 rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:border-pink-500/40 transition flex flex-col items-center"
 
           >
 
-            <FaInstagram className="text-2xl text-pink-400 mb-3" />
+            <FaInstagram className="text-lg sm:text-2xl text-pink-400 mb-1.5 sm:mb-3" />
 
-            <h2 className="text-2xl font-bold mb-3">
+            <h2 className="text-sm sm:text-2xl font-bold mb-1.5 sm:mb-3">
               Instagram
             </h2>
 
-            <p className="text-gray-400">
+            <p className="text-gray-450 text-[9px] xs:text-[11px] sm:text-sm text-center">
               Follow my creative journey.
             </p>
 
@@ -125,17 +125,17 @@ const FindMe = () => {
 
   href="mailto:adityasharma22093@gmail.com"
 
-  className="p-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:border-cyan-500/40 transition flex flex-col items-center"
+  className="p-4 sm:p-10 rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:border-cyan-500/40 transition flex flex-col items-center"
 
 >
 
-  <FaEnvelope className="text-2xl text-cyan-400 mb-3" />
+  <FaEnvelope className="text-lg sm:text-2xl text-cyan-400 mb-1.5 sm:mb-3" />
 
-  <h2 className="text-2xl font-bold mb-3">
+  <h2 className="text-sm sm:text-2xl font-bold mb-1.5 sm:mb-3">
     Email
   </h2>
 
-  <p className="text-gray-400">
+  <p className="text-gray-450 text-[9px] xs:text-[11px] sm:text-sm text-center">
     Let's build something amazing together.
   </p>
 

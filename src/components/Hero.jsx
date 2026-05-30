@@ -4,12 +4,12 @@ import developer from "../assets/developer.png"
 const Hero = () => {
   return (
 
-    
+
     <section
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#05010d] pt-24"
     >
-      
+
 
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
@@ -33,7 +33,7 @@ const Hero = () => {
       </div>
 
       {/* Main Container */}
-      <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-10 items-center px-8 relative z-10">
+      <div className="max-w-6xl mx-auto w-full grid grid-cols-2 gap-3 sm:gap-10 items-center px-4 sm:px-8 relative z-10">
 
         {/* LEFT SIDE */}
         <motion.div
@@ -53,7 +53,7 @@ const Hero = () => {
           </h2>
 
           {/* NAME */}
-          <h1 className="text-fluid-4xl md:text-fluid-6xl font-extrabold uppercase leading-none mb-8 bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-fluid-3xl md:text-fluid-6xl font-extrabold uppercase leading-none mb-8 bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
 
             ADITYA SHARMA
 
@@ -138,26 +138,30 @@ const Hero = () => {
 
         </motion.div>
 
-       {/* RIGHT SIDE */}
+        {/* RIGHT SIDE */}
 
-<div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[360px] md:h-[360px] flex items-center justify-center mx-auto mt-10 md:mt-0">
+        <div className="relative w-[110px] h-[110px] xs:w-[130px] xs:h-[130px] sm:w-[220px] sm:h-[220px] md:w-[280px] md:h-[280px] lg:w-[310px] lg:h-[310px] flex items-center justify-center mx-auto mt-0">
 
-  <div className="animated-ring-reverse"></div>
+          <div className="animated-ring-reverse"></div>
 
-  <div className="animated-ring"></div>
+          <div className="animated-ring"></div>
 
-  <div className="absolute inset-[6px] sm:inset-[8px] rounded-full bg-[#05010d]"></div>
+          <div className="absolute inset-[4px] sm:inset-[8px] rounded-full bg-[#05010d]"></div>
 
-  <img
-    src={developer}
-    alt="developer"
-    className="
-      w-[240px]
-      h-[240px]
-      sm:w-[300px]
-      sm:h-[300px]
-      md:w-[340px]
-      md:h-[340px]
+          <img
+            src={developer}
+            alt="developer"
+            className="
+      w-[100px]
+      h-[100px]
+      xs:w-[120px]
+      xs:h-[120px]
+      sm:w-[200px]
+      sm:h-[200px]
+      md:w-[260px]
+      md:h-[260px]
+      lg:w-[290px]
+      lg:h-[290px]
       rounded-full
       object-cover
       relative
@@ -167,9 +171,9 @@ const Hero = () => {
       duration-500
       shadow-[0_0_40px_rgba(0,255,255,0.25)]
     "
-  />
+          />
 
-</div>
+        </div>
 
       </div>
 
