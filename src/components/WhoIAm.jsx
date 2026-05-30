@@ -48,7 +48,7 @@ const WhoIAm = () => {
         >
 
           {/* Heading */}
-          <h1 className="text-3xl md:text-4xl font-extrabold mb-8 text-center md:text-left">
+          <h1 className="text-fluid-2xl md:text-fluid-4xl font-extrabold mb-8 text-center md:text-left">
 
             Know Who{" "}
 
@@ -131,7 +131,7 @@ const WhoIAm = () => {
             </div>
 
             {/* Content */}
-            <div className="p-3 space-y-3 font-mono text-sm md:text-lg">
+            <div className="p-5 md:p-6 space-y-4 font-mono text-[13px] sm:text-sm md:text-base">
 
               {/* Row */}
               <div className="flex justify-between border-b border-white/5 pb-4">
@@ -325,7 +325,7 @@ const WhoIAm = () => {
 
             alt="developer2"
 
-            className="w-[320px] md:w-[450px] object-contain relative z-10"
+            className="w-[250px] sm:w-[320px] md:w-[400px] lg:w-[450px] object-contain relative z-10"
 
           />
 

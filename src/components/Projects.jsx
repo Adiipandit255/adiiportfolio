@@ -73,7 +73,7 @@ const Projects = () => {
           initial={{ letterSpacing: "0px" }}
           whileInView={{ letterSpacing: "-3px" }}
           transition={{ duration: 1 }}
-          className="text-5xl md:text-7xl font-black"
+          className="text-fluid-4xl md:text-fluid-6xl font-black"
         >
           Strategic{" "}
 
@@ -211,7 +211,7 @@ const Projects = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-6"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 md:p-6"
           >
 
             <motion.div
@@ -219,11 +219,11 @@ const Projects = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.7, opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="relative max-w-4xl w-full rounded-[30px] overflow-hidden border border-cyan-500/30 bg-[#071018]"
+              className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-[30px] border border-cyan-500/30 bg-[#071018] scrollbar-thin scrollbar-thumb-cyan-400"
             >
 
               {/* IMAGE */}
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-48 sm:h-64 md:h-80 overflow-hidden">
 
                 <img
                   src={selectedProject.image}
@@ -236,24 +236,24 @@ const Projects = () => {
               </div>
 
               {/* CONTENT */}
-              <div className="p-8">
+              <div className="p-6 md:p-8">
 
-                <h2 className="text-5xl font-black">
+                <h2 className="text-3xl md:text-5xl font-black">
                   {selectedProject.title}
                 </h2>
 
-                <p className="text-gray-400 mt-6 leading-relaxed">
+                <p className="text-gray-400 mt-4 md:mt-6 leading-relaxed text-sm md:text-base">
                   {selectedProject.full}
                 </p>
 
                 {/* TAGS */}
-                <div className="flex flex-wrap gap-3 mt-7">
+                <div className="flex flex-wrap gap-2 md:gap-3 mt-6 md:mt-7">
 
                   {selectedProject.tags.map((tag, i) => (
 
                     <span
                       key={i}
-                      className="px-4 py-2 rounded-full text-xs border border-cyan-500/40 bg-cyan-500/10 text-cyan-300"
+                      className="px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs border border-cyan-500/40 bg-cyan-500/10 text-cyan-300"
                     >
                       {tag}
                     </span>
@@ -263,19 +263,19 @@ const Projects = () => {
                 </div>
 
                 {/* BUTTONS */}
-                <div className="flex gap-5 mt-10">
+                <div className="flex flex-wrap gap-4 mt-8 md:mt-10">
 
                   <a
                     href={selectedProject.live}
                     target="_blank"
-                    className="px-8 py-4 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition"
+                    className="px-6 py-3 md:px-8 md:py-4 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition text-sm md:text-base text-center"
                   >
                     Live Preview
                   </a>
 
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition"
+                    className="px-6 py-3 md:px-8 md:py-4 rounded-full border border-white/20 hover:bg-white/10 transition text-sm md:text-base"
                   >
                     Close
                   </button>

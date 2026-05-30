@@ -123,7 +123,7 @@ const FindMe = () => {
     y: -10
   }}
 
-  href="adityasharma22093@gmail.com"
+  href="mailto:adityasharma22093@gmail.com"
 
   className="p-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:border-cyan-500/40 transition flex flex-col items-center"
 

@@ -43,17 +43,17 @@ const Hero = () => {
         >
 
           {/* Small Text */}
-          <p className="text-gray-400 text-lg mb-6 font-medium">
+          <p className="text-gray-400 text-fluid-base md:text-fluid-lg mb-6 font-medium">
             You wandered in. Good. Stay a while. Things get weird.
           </p>
 
           {/* I'M */}
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+          <h2 className="text-fluid-xl md:text-fluid-2xl font-bold text-white mb-2">
             I'M
           </h2>
 
           {/* NAME */}
-          <h1 className="text-4xl md:text-5xl font-extrabold uppercase leading-none mb-8 bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-fluid-4xl md:text-fluid-6xl font-extrabold uppercase leading-none mb-8 bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
 
             ADITYA SHARMA
 
@@ -63,7 +63,7 @@ const Hero = () => {
           <div className="w-full max-w-[700px] h-[3px] bg-gradient-to-r from-pink-500 to-cyan-400 rounded-full mb-10"></div>
 
           {/* Typing Animation */}
-          <div className="text-3xl md:text-4xl font-bold text-cyan-400 h-24">
+          <div className="text-fluid-2xl md:text-fluid-3xl font-bold text-cyan-400 h-24">
 
             <TypeAnimation
               sequence={[
@@ -83,34 +83,34 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="flex gap-12 mt-10 flex-wrap">
+          <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-4 sm:gap-12 mt-10">
 
             <div>
-              <h2 className="text-2xl font-bold text-pink-400">
+              <h2 className="text-xl sm:text-2xl font-bold text-pink-400">
                 40+
               </h2>
 
-              <p className="text-gray-500 uppercase text-sm tracking-widest">
-                Leads Generated
+              <p className="text-gray-500 uppercase text-[10px] sm:text-xs tracking-wider sm:tracking-widest">
+                Leads Gen
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-pink-400">
+              <h2 className="text-xl sm:text-2xl font-bold text-pink-400">
                 200%
               </h2>
 
-              <p className="text-gray-500 uppercase text-sm tracking-widest">
+              <p className="text-gray-500 uppercase text-[10px] sm:text-xs tracking-wider sm:tracking-widest">
                 Social Growth
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-pink-400">
+              <h2 className="text-xl sm:text-2xl font-bold text-pink-400">
                 12+
               </h2>
 
-              <p className="text-gray-500 uppercase text-sm tracking-widest">
+              <p className="text-gray-500 uppercase text-[10px] sm:text-xs tracking-wider sm:tracking-widest">
                 Live Projects
               </p>
             </div>
@@ -128,7 +128,7 @@ const Hero = () => {
               scale: 0.95
             }}
 
-            className="mt-14 px-10 py-5 rounded-2xl bg-gradient-to-r from-pink-500 to-purple-600 text-xl font-bold shadow-lg shadow-pink-500/30"
+            className="mt-10 md:mt-14 px-8 md:px-10 py-4 md:py-5 rounded-2xl bg-gradient-to-r from-pink-500 to-purple-600 text-lg md:text-xl font-bold shadow-lg shadow-pink-500/30"
 
           >
 
@@ -140,20 +140,24 @@ const Hero = () => {
 
        {/* RIGHT SIDE */}
 
-<div className="relative w-[320px] h-[320px] flex items-center justify-center mx-auto">
+<div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[360px] md:h-[360px] flex items-center justify-center mx-auto mt-10 md:mt-0">
 
   <div className="animated-ring-reverse"></div>
 
   <div className="animated-ring"></div>
 
-  <div className="absolute inset-[8px] rounded-full bg-[#05010d]"></div>
+  <div className="absolute inset-[6px] sm:inset-[8px] rounded-full bg-[#05010d]"></div>
 
   <img
     src={developer}
     alt="developer"
     className="
-      w-[300px]
-      h-[300px]
+      w-[240px]
+      h-[240px]
+      sm:w-[300px]
+      sm:h-[300px]
+      md:w-[340px]
+      md:h-[340px]
       rounded-full
       object-cover
       relative

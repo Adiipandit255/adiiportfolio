@@ -122,7 +122,7 @@ const Certifications = () => {
         </motion.div>
 
         {/* STATS */}
-        <div className="grid md:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16">
 
           <div className="rounded-3xl border border-cyan-500/20 bg-white/[0.03] p-6 text-center">
             <h2 className="text-4xl font-bold text-cyan-300">7+</h2>

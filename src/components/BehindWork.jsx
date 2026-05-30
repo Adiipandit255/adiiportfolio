@@ -18,7 +18,7 @@ const cards = [
     text: (
       <>
         I work with <span className="text-pink-400">brands</span>
-        <span className="ml-2 px-2 py-1 rounded-full text-[4px] border border-purple-500/30 text-purple-300">
+        <span className="ml-2 px-2 py-0.5 rounded-full text-[10px] border border-purple-500/30 text-purple-300 align-middle">
           MARKETING
         </span>
         {" "}to build sharper strategies, improve positioning, and directly
@@ -35,7 +35,7 @@ const cards = [
         <span className="text-cyan-400">
           creators & influencers
         </span>
-        <span className="ml-2 px-2 py-1 rounded-full text-[4px] border border-purple-500/30 text-purple-300">
+        <span className="ml-2 px-2 py-0.5 rounded-full text-[10px] border border-purple-500/30 text-purple-300 align-middle">
           COLLABS
         </span>
         {" "}to help them land consistent brand deals and turn their audience
@@ -52,7 +52,7 @@ const cards = [
         <span className="text-pink-400">
           Artificial Intelligence
         </span>
-        <span className="ml-2 px-2 py-1 rounded-full text-[4px] border border-purple-500/30 text-purple-300">
+        <span className="ml-2 px-2 py-0.5 rounded-full text-[10px] border border-purple-500/30 text-purple-300 align-middle">
           AI
         </span>
         {" "}in real world ways, helping them save time, work smarter, and stay ahead.
@@ -99,7 +99,7 @@ const BehindWork = () => {
           >
 
             <div className="relative flex items-center justify-center">
-<div className="relative flex items-center justify-center w-[320px] h-[320px]">
+<div className="relative flex items-center justify-center w-[280px] h-[280px] sm:w-[350px] sm:h-[350px]">
 
   <div className="ring-purple"></div>
 
@@ -108,7 +108,7 @@ const BehindWork = () => {
   <img
     src={developer}
     alt="developer"
-    className="relative z-20 w-[300px] h-[300px] rounded-full object-cover border-[3px] border-cyan-400-translate-x-14"
+    className="relative z-20 w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] rounded-full object-cover border-[3px] border-cyan-400"
   />
 
 </div>
@@ -146,11 +146,11 @@ const BehindWork = () => {
             transition={{ duration: 1 }}
           >
 
-            <p className="uppercase tracking-[5px] text-gray-500 text-sm mb-4 text-center">
+            <p className="uppercase tracking-[5px] text-gray-500 text-fluid-xs sm:text-fluid-sm mb-4 text-center">
               THE PERSON
             </p>
 
-            <h1 className="text-3xl md:text-3xl font-black mb-10 text-center bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <h1 className="text-fluid-2xl md:text-fluid-4xl font-black mb-10 text-center bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
               Behind The Work.
             </h1>
 
