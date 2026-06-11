@@ -8,7 +8,6 @@ import Projects from "./components/Projects"
 import Contact from "./components/Contact"
 import Resume from "./components/Resume";
 import Certifications from "./components/Certifications";
-import AdminPanel from "./components/AdminPanel";
 import RoleSelectModal from "./components/RoleSelectModal";
 import CustomCursor from "./components/CustomCursor";
 import AIAssistant from "./components/AIAssistant";
@@ -51,8 +50,6 @@ function App() {
           <Route path="/resume" element={<Resume />} />
 
           <Route path="/certifications" element={<Certifications />} />
-
-          <Route path="/admin" element={<AdminPanel />} />
         
         </Routes>
 
