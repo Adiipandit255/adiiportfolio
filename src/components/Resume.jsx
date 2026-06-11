@@ -1,19 +1,16 @@
 import { motion } from "framer-motion";
+import { usePortfolio } from "../context/PortfolioContext";
 
 const Resume = () => {
+  const { profileInfo } = usePortfolio();
   return (
-    <div className="relative min-h-screen bg-[#03040a] text-white overflow-hidden">
+    <div className="relative min-h-screen bg-themeBg text-themeText transition-colors duration-500 overflow-hidden">
 
-      {/* GRID BACKGROUND */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.04)_1px,transparent_1px)] bg-[size:55px_55px]" />
-
-      {/* CYAN GLOW */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-cyan-500/10 blur-[200px] rounded-full"></div>
 
       {/* HERO SECTION */}
       <section className="relative z-10 py-20 px-6">
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-[1600px] mx-auto">
 
           {/* HEADING */}
           <motion.div
@@ -65,7 +62,7 @@ const Resume = () => {
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="relative max-w-6xl mx-auto"
+            className="relative max-w-[1600px] mx-auto"
           >
 
             {/* ANIMATED BORDER */}
@@ -101,7 +98,7 @@ const Resume = () => {
 
                 {/* RESUME IMAGE */}
                 <img
-                  src="/resume-preview.png"
+                  src={profileInfo.resumePreview}
                   alt="Resume Preview"
                   className="
                     w-full
@@ -126,7 +123,7 @@ const Resume = () => {
           >
 
             <a
-              href="/resume.pdf"
+              href={profileInfo.resumePdf}
               download
               className="
                 px-8 py-4
@@ -143,7 +140,7 @@ const Resume = () => {
             </a>
 
             <a
-              href="/resume.pdf"
+              href={profileInfo.resumePdf}
               target="_blank"
               rel="noreferrer"
               className="
@@ -167,7 +164,7 @@ const Resume = () => {
       {/* SCROLL SECTION */}
       <section className="relative z-10 py-24 px-6">
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-[1600px] mx-auto">
 
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
@@ -185,7 +182,7 @@ const Resume = () => {
                 y: -8,
                 scale: 1.02,
               }}
-              className="rounded-[24px] border border-cyan-500/20 bg-white/[0.03] backdrop-blur-xl p-8"
+              className="rounded-[24px] border border-cyan-500/20 bg-black/40 backdrop-blur-xl p-8 hover:shadow-[0_0_25px_rgba(0,255,255,0.15)] transition-all duration-500"
             >
 
               <h3 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-4">
@@ -208,7 +205,7 @@ const Resume = () => {
                 y: -8,
                 scale: 1.02,
               }}
-              className="rounded-[24px] border border-cyan-500/20 bg-white/[0.03] backdrop-blur-xl p-8"
+              className="rounded-[24px] border border-cyan-500/20 bg-black/40 backdrop-blur-xl p-8 hover:shadow-[0_0_25px_rgba(0,255,255,0.15)] transition-all duration-500"
             >
 
               <h3 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-4">
@@ -231,7 +228,7 @@ const Resume = () => {
                 y: -8,
                 scale: 1.02,
               }}
-              className="rounded-[24px] border border-cyan-500/20 bg-white/[0.03] backdrop-blur-xl p-8"
+              className="rounded-[24px] border border-cyan-500/20 bg-black/40 backdrop-blur-xl p-8 hover:shadow-[0_0_25px_rgba(0,255,255,0.15)] transition-all duration-500"
             >
 
               <h3 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-4">
@@ -250,7 +247,7 @@ const Resume = () => {
                 y: -8,
                 scale: 1.02,
               }}
-              className="rounded-[24px] border border-cyan-500/20 bg-white/[0.03] backdrop-blur-xl p-8"
+              className="rounded-[24px] border border-cyan-500/20 bg-black/40 backdrop-blur-xl p-8 hover:shadow-[0_0_25px_rgba(0,255,255,0.15)] transition-all duration-500"
             >
 
               <h3 className="text-xl sm:text-2xl font-bold text-cyan-300 mb-4">

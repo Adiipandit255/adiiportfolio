@@ -2,7 +2,6 @@ import Particles from "react-tsparticles"
 import { loadFull } from "tsparticles"
 
 const ParticlesBackground = () => {
-
   const particlesInit = async (main) => {
     await loadFull(main)
   }
@@ -27,12 +26,12 @@ const ParticlesBackground = () => {
           },
 
           color: {
-            value: "#7c3aed",
+            value: "#00e5ff",
           },
 
           links: {
             enable: true,
-            color: "#7c3aed",
+            color: "#d946ef",
             distance: 150,
             opacity: 0.2,
           },

@@ -7,16 +7,16 @@ const WhoIAm = () => {
 
     <section
       id="About"
-      className="min-h-screen bg-[#05010d] flex items-center justify-center px-8 py-24 relative overflow-hidden"
+       className="min-h-screen bg-themeBg text-themeText transition-colors duration-500 flex items-center justify-center px-8 py-24 relative overflow-hidden"
     >
 
       {/* Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 
       {/* Glow Effects */}
-      <div className="absolute top-20 left-20 w-[300px] h-[300px] bg-pink-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 left-20 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="absolute bottom-20 right-20 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-20 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       {/* Stars */}
       <div className="absolute inset-0 opacity-40">
@@ -32,7 +32,7 @@ const WhoIAm = () => {
       </div>
 
       {/* Main Container */}
-      <div className="max-w-6xl mx-auto grid grid-cols-2 gap-3 sm:gap-20 items-center relative z-10">
+      <div className="max-w-[1600px] mx-auto grid grid-cols-2 gap-3 sm:gap-20 items-center relative z-10">
 
         {/* LEFT SIDE */}
         <motion.div

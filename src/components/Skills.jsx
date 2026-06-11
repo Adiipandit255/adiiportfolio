@@ -1,3 +1,5 @@
+import React from "react";
+import { motion } from "framer-motion";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -44,17 +46,29 @@ const tools = [
 
 export default function Skills() {
   return (
-    <section className="relative bg-[#050014] text-white py-20 overflow-hidden">
+    <section className="relative bg-themeBg text-themeText py-20 overflow-hidden transition-colors duration-500">
+      {/* Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+
+      {/* Glow Effects */}
+      <div className="absolute top-20 left-20 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-20 right-20 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       {/* Stars Background */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="stars"></div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
-
-        {/* Core Expertise */}
-        <div className="text-center mb-10">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-6">
+        
+        {/* Core Expertise Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-10"
+        >
           <h2 className="text-fluid-2xl md:text-fluid-4xl font-bold">
             Core <span className="text-purple-500">Expertise</span>
           </h2>
@@ -64,15 +78,19 @@ export default function Skills() {
             <div className="w-2 h-2 rounded-full bg-purple-500"></div>
             <div className="w-16 h-[1px] bg-purple-500"></div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Expertise Grid */}
+        {/* Expertise Grid - Animated Glass Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-4 mb-20">
-
           {expertise.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group bg-[#0b0223] border border-purple-500/20 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center hover:border-purple-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all duration-500 hover:-translate-y-2"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              whileHover={{ y: -8, scale: 1.05 }}
+              className="group bg-black/40 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-all duration-300 cursor-pointer"
             >
               <div className="text-3xl sm:text-5xl mb-1.5 sm:mb-3 group-hover:scale-110 transition duration-300">
                 {skill.icon}
@@ -81,12 +99,18 @@ export default function Skills() {
               <h3 className="text-[10px] sm:text-sm font-medium text-gray-200 text-center">
                 {skill.name}
               </h3>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Tools */}
-        <div className="text-center mb-10">
+        {/* Tools Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-10"
+        >
           <h2 className="text-fluid-2xl md:text-fluid-4xl font-bold">
             Tools <span className="text-purple-500">I Use</span>
           </h2>
@@ -96,15 +120,19 @@ export default function Skills() {
             <div className="w-2 h-2 rounded-full bg-purple-500"></div>
             <div className="w-16 h-[1px] bg-purple-500"></div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Tools Grid */}
+        {/* Tools Grid - Animated Glass Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-4">
-
           {tools.map((tool, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group bg-[#0b0223] border border-purple-500/20 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center hover:border-purple-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all duration-500 hover:-translate-y-2"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              whileHover={{ y: -8, scale: 1.05 }}
+              className="group bg-black/40 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-all duration-300 cursor-pointer"
             >
               <div className="text-3xl sm:text-5xl mb-1.5 sm:mb-3 group-hover:scale-110 transition duration-300">
                 {tool.icon}
@@ -113,7 +141,7 @@ export default function Skills() {
               <h3 className="text-[10px] sm:text-sm font-medium text-gray-200 text-center">
                 {tool.name}
               </h3>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

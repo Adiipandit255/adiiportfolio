@@ -32,62 +32,9 @@ const Execution = () => {
 
   return (
 
-    <section className="bg-[#05010d] py-20 px-6 text-white relative overflow-hidden">
+    <section className="bg-transparent py-20 px-6 text-white relative overflow-hidden">
 
-      {/* GRID BACKGROUND */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
-
-      {/* ANIMATED GLOW */}
-      <motion.div
-
-        animate={{
-          x: [0, 80, 0],
-          y: [0, 40, 0],
-        }}
-
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-
-        className="absolute top-10 left-10 w-[300px] h-[300px] bg-pink-500/10 rounded-full blur-3xl"
-
-      />
-
-      <motion.div
-
-        animate={{
-          x: [0, -60, 0],
-          y: [0, -40, 0],
-        }}
-
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-
-        className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-3xl"
-
-      />
-
-      {/* STARS */}
-      <div className="absolute inset-0 opacity-60">
-
-        <div className="absolute top-20 left-20 w-1 h-1 bg-white rounded-full"></div>
-
-        <div className="absolute top-40 left-[30%] w-1 h-1 bg-white rounded-full"></div>
-
-        <div className="absolute top-28 right-[20%] w-1 h-1 bg-white rounded-full"></div>
-
-        <div className="absolute bottom-32 left-[40%] w-1 h-1 bg-white rounded-full"></div>
-
-        <div className="absolute bottom-20 right-40 w-1 h-1 bg-white rounded-full"></div>
-
-      </div>
-
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-[1600px] mx-auto relative z-10">
 
         {/* HEADING */}
         <motion.div
@@ -185,7 +132,7 @@ const Execution = () => {
                 rotateY: 5
               }}
 
-              className="group h-[165px] sm:h-[240px] rounded-[18px] sm:rounded-[30px] border border-purple-500/20 bg-[#0b0617] flex flex-col items-center justify-center text-center px-3 sm:px-5 relative overflow-hidden"
+              className="group h-[165px] sm:h-[240px] rounded-[18px] sm:rounded-[30px] border border-cyan-500/20 bg-black/40 backdrop-blur-xl flex flex-col items-center justify-center text-center px-3 sm:px-5 relative overflow-hidden hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(0,255,255,0.2)] transition-all duration-500"
 
             >
 

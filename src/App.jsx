@@ -8,6 +8,11 @@ import Projects from "./components/Projects"
 import Contact from "./components/Contact"
 import Resume from "./components/Resume";
 import Certifications from "./components/Certifications";
+import AdminPanel from "./components/AdminPanel";
+import RoleSelectModal from "./components/RoleSelectModal";
+import CustomCursor from "./components/CustomCursor";
+import AIAssistant from "./components/AIAssistant";
+import AtmosphereBackground from "./components/AtmosphereBackground";
 
 function App() {
 
@@ -15,7 +20,19 @@ function App() {
 
     <BrowserRouter>
 
-      <div className="bg-[#05010d] text-white overflow-x-hidden min-h-screen">
+      <div className="bg-themeBg text-themeText transition-colors duration-500 overflow-x-hidden min-h-screen relative">
+
+        {/* ATMOSPHERE BACKGROUND */}
+        <AtmosphereBackground />
+
+        {/* CUSTOM CURSOR */}
+        <CustomCursor />
+
+        {/* AI ASSISTANT CHATBOT */}
+        <AIAssistant />
+
+        {/* ROLE SELECT MODAL */}
+        <RoleSelectModal />
 
         {/* NAVBAR */}
         <Navbar />
@@ -34,6 +51,8 @@ function App() {
           <Route path="/resume" element={<Resume />} />
 
           <Route path="/certifications" element={<Certifications />} />
+
+          <Route path="/admin" element={<AdminPanel />} />
         
         </Routes>
 
@@ -48,4 +67,3 @@ function App() {
 }
 
 export default App
-

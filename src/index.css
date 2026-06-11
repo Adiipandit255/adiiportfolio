@@ -2,15 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-  scroll-behavior:smooth;
+:root {
+  --theme-bg: transparent;
+  --theme-text: #ffffff;
+  --theme-accent-1: #00e5ff; /* cyan */
+  --theme-accent-2: #d946ef; /* fuchsia/purple */
+  --theme-accent-rgb-1: 0, 229, 255;
+  --theme-accent-rgb-2: 217, 70, 239;
+  --theme-glow-1: rgba(0, 229, 255, 0.4);
+  --theme-glow-2: rgba(217, 70, 239, 0.4);
+  --theme-glass-bg: rgba(255, 255, 255, 0.03);
+  --theme-glass-border: rgba(255, 255, 255, 0.08);
 }
 
-body{
-  margin:0;
-  padding:0;
-  background:#05010d;
-  font-family:Arial, Helvetica, sans-serif;
+
+html {
+  scroll-behavior: smooth;
+  background-color: #030008;
+  color: var(--theme-text);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #030008;
+  color: var(--theme-text);
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
 }
 
 /* Resume Border Animation */
@@ -33,69 +53,18 @@ body{
   }
 }
 
-.ring-cyan,
-.ring-purple {
-  position: absolute;
-  border-radius: 50%;
-}
-
 .ring-cyan {
-  width: 120px;
-  height: 120px;
-
-  background: conic-gradient(
-    transparent 0deg,
-    transparent 280deg,
-    #00e5ff 320deg,
-    #00e5ff 360deg
-  );
-
+  border: 0.8px solid transparent;
+  border-top: 0.8px solid var(--theme-accent-1);
+  border-bottom: 0.8px solid var(--theme-accent-1);
   animation: ringSpin 4s linear infinite;
 }
 
 .ring-purple {
-  width: 140px;
-  height: 140px;
-
-  background: conic-gradient(
-    transparent 0deg,
-    transparent 240deg,
-    #d946ef 310deg,
-    #d946ef 360deg
-  );
-
+  border: 0.6px solid transparent;
+  border-left: 0.6px solid var(--theme-accent-2);
+  border-right: 0.6px solid var(--theme-accent-2);
   animation: ringSpin 7s linear infinite reverse;
-}
-
-@media (min-width: 400px) {
-  .ring-cyan {
-    width: 160px;
-    height: 160px;
-  }
-  .ring-purple {
-    width: 180px;
-    height: 180px;
-  }
-}
-
-@media (min-width: 640px) {
-  .ring-cyan {
-    width: 300px;
-    height: 300px;
-  }
-  .ring-purple {
-    width: 340px;
-    height: 340px;
-  }
-}
-
-.ring-cyan::before,
-.ring-purple::before {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  background: #05010d;
 }
 /* Reverse Ring Rotation */
 @keyframes rotateRing {
@@ -108,58 +77,24 @@ body{
   }
 }
 
-.animated-ring{
+.animated-ring {
   position: absolute;
-  inset: 0;
+  inset: -6px;
   border-radius: 50%;
-  padding: 6px;
-
-  background: conic-gradient(
-  rgb(104, 0, 71) 0deg 60deg,
-  rgb(113, 5, 95) 60deg 120deg,
-  rgb(103, 1, 100) 120deg 180deg,
-  rgb(115, 1, 113) 180deg 240deg,
-  rgb(134, 2, 134) 240deg 300deg,
-  rgb(92, 2, 84) 300deg 360deg
-);
-
-  animation: rotateRing 3.5s linear infinite;
-
- 
-}
-
-.animated-ring::before{
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  background: #05010d;
+  border: 0.8px solid transparent;
+  border-top: 0.8px solid var(--theme-accent-1);
+  border-bottom: 0.8px solid var(--theme-accent-2);
+  animation: rotateRing 4s linear infinite;
 }
 
 .animated-ring-reverse {
   position: absolute;
-  inset: 0;
+  inset: -12px;
   border-radius: 50%;
-  padding: 6px;
-
-  background: conic-gradient(
-    rgb(0, 229, 255) 0deg 60deg,
-    rgb(0, 180, 216) 60deg 120deg,
-    rgb(3, 4, 94) 120deg 180deg,
-    rgb(0, 119, 182) 180deg 240deg,
-    rgb(0, 150, 199) 240deg 300deg,
-    rgb(72, 202, 228) 300deg 360deg
-  );
-
-  animation: rotateRing 5s linear infinite reverse;
-}
-
-.animated-ring-reverse::before {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  background: #05010d;
+  border: 0.6px solid transparent;
+  border-left: 0.6px solid var(--theme-accent-2);
+  border-right: 0.6px solid var(--theme-accent-1);
+  animation: rotateRing 6s linear infinite reverse;
 }
 
 @layer utilities {
@@ -196,5 +131,55 @@ body{
   .text-fluid-7xl {
     font-size: clamp(2rem, 1.4rem + 5vw, 6.5rem);
   }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* GPU Hardware-Accelerated Smooth Aurora Drift Animations */
+@keyframes driftSlow {
+  0% {
+    transform: translate3d(0px, 0px, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(50px, -70px, 0) scale(1.15);
+  }
+  66% {
+    transform: translate3d(-30px, 40px, 0) scale(0.9);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0) scale(1);
+  }
+}
+
+@keyframes driftMedium {
+  0% {
+    transform: translate3d(0px, 0px, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-60px, 50px, 0) scale(1.1);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0) scale(1);
+  }
+}
+
+.animate-drift-slow {
+  animation: driftSlow 30s ease-in-out infinite;
+}
+
+.animate-drift-medium {
+  animation: driftMedium 40s ease-in-out infinite;
+}
+
+.animate-drift-fast {
+  animation: driftSlow 22s ease-in-out infinite reverse;
 }
 
