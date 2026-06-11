@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
@@ -18,7 +18,7 @@ function App() {
 
   return (
 
-    <HashRouter>
+    <BrowserRouter>
 
       <div className="bg-themeBg text-themeText transition-colors duration-500 overflow-x-hidden min-h-screen relative">
 
@@ -61,7 +61,7 @@ function App() {
 
       </div>
 
-    </HashRouter>
+    </BrowserRouter>
 
   )
 }
