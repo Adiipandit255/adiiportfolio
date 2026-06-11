@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { db, isFirebaseConfigured } from "../firebase";
-import { collection, doc, getDocs, setDoc, deleteDoc } from "firebase/firestore";
+import { collection, doc, getDocs, setDoc, deleteDoc, onSnapshot } from "firebase/firestore";
 
 const PortfolioContext = createContext();
 
@@ -249,79 +249,93 @@ export const PortfolioProvider = ({ children }) => {
     }
   }, [visitorRole]);
 
-  // Load from Firebase Firestore on Mount (if configured)
+  // Load from Firebase Firestore on Mount with Real-Time Listeners
   useEffect(() => {
-    const syncWithFirebase = async () => {
-      if (isFirebaseConfigured()) {
-        try {
-          // Sync Profile
-          const profileRef = collection(db, "profile");
-          const profileSnapshot = await getDocs(profileRef);
-          if (profileSnapshot.empty) {
-            await setDoc(doc(db, "profile", "main"), defaultProfile);
-            setProfileInfo(defaultProfile);
-          } else {
-            setProfileInfo(profileSnapshot.docs[0].data());
-          }
+    if (!isFirebaseConfigured()) return;
 
-          // Sync Projects
-          const projectsRef = collection(db, "projects");
-          const projectsSnapshot = await getDocs(projectsRef);
-          if (projectsSnapshot.empty) {
-            for (const proj of defaultProjects) {
-              await setDoc(doc(db, "projects", proj.id), proj);
-            }
-            setProjects(defaultProjects);
-          } else {
-            const list = projectsSnapshot.docs.map((d) => d.data());
-            setProjects(list.sort((a, b) => b.id.localeCompare(a.id)));
-          }
+    const unsubscribers = [];
 
-          // Sync Certifications
-          const certsRef = collection(db, "certifications");
-          const certsSnapshot = await getDocs(certsRef);
-          if (certsSnapshot.empty) {
-            for (const cert of defaultCertifications) {
-              await setDoc(doc(db, "certifications", cert.id), cert);
-            }
-            setCertifications(defaultCertifications);
-          } else {
-            const list = certsSnapshot.docs.map((d) => d.data());
-            setCertifications(list.sort((a, b) => Number(a.id) - Number(b.id)));
-          }
-
-          // Sync Messages
-          const msgsRef = collection(db, "messages");
-          const msgsSnapshot = await getDocs(msgsRef);
-          if (!msgsSnapshot.empty) {
-            const list = msgsSnapshot.docs.map((d) => d.data());
-            setMessages(list.sort((a, b) => b.timestamp.localeCompare(a.timestamp)));
-          }
-
-          // Sync Visits
-          const visitsRef = collection(db, "visits");
-          const visitsSnapshot = await getDocs(visitsRef);
-          if (!visitsSnapshot.empty) {
-            const list = visitsSnapshot.docs.map((d) => d.data());
-            setVisits(list.sort((a, b) => b.timestamp.localeCompare(a.timestamp)));
-          }
-
-          // Sync Passcode
-          const configRef = collection(db, "config");
-          const configSnapshot = await getDocs(configRef);
-          if (configSnapshot.empty) {
-            await setDoc(doc(db, "config", "security"), { passcode: "admin123" });
-            setPasscode("admin123");
-          } else {
-            setPasscode(configSnapshot.docs[0].data().passcode || "admin123");
-          }
-        } catch (error) {
-          console.error("Firebase Sync error. Falling back to local values.", error);
+    try {
+      // Real-time listener: Profile
+      const profileRef = collection(db, "profile");
+      const unsubProfile = onSnapshot(profileRef, async (snapshot) => {
+        if (snapshot.empty) {
+          await setDoc(doc(db, "profile", "main"), defaultProfile);
+          setProfileInfo(defaultProfile);
+        } else {
+          setProfileInfo(snapshot.docs[0].data());
         }
-      }
-    };
+      }, (err) => console.error("Profile listener error:", err));
+      unsubscribers.push(unsubProfile);
 
-    syncWithFirebase();
+      // Real-time listener: Projects
+      const projectsRef = collection(db, "projects");
+      const unsubProjects = onSnapshot(projectsRef, async (snapshot) => {
+        if (snapshot.empty) {
+          for (const proj of defaultProjects) {
+            await setDoc(doc(db, "projects", proj.id), proj);
+          }
+          setProjects(defaultProjects);
+        } else {
+          const list = snapshot.docs.map((d) => d.data());
+          setProjects(list.sort((a, b) => b.id.localeCompare(a.id)));
+        }
+      }, (err) => console.error("Projects listener error:", err));
+      unsubscribers.push(unsubProjects);
+
+      // Real-time listener: Certifications
+      const certsRef = collection(db, "certifications");
+      const unsubCerts = onSnapshot(certsRef, async (snapshot) => {
+        if (snapshot.empty) {
+          for (const cert of defaultCertifications) {
+            await setDoc(doc(db, "certifications", cert.id), cert);
+          }
+          setCertifications(defaultCertifications);
+        } else {
+          const list = snapshot.docs.map((d) => d.data());
+          setCertifications(list.sort((a, b) => Number(a.id) - Number(b.id)));
+        }
+      }, (err) => console.error("Certifications listener error:", err));
+      unsubscribers.push(unsubCerts);
+
+      // Real-time listener: Messages
+      const msgsRef = collection(db, "messages");
+      const unsubMsgs = onSnapshot(msgsRef, (snapshot) => {
+        if (!snapshot.empty) {
+          const list = snapshot.docs.map((d) => d.data());
+          setMessages(list.sort((a, b) => b.timestamp.localeCompare(a.timestamp)));
+        }
+      }, (err) => console.error("Messages listener error:", err));
+      unsubscribers.push(unsubMsgs);
+
+      // Real-time listener: Visits
+      const visitsRef = collection(db, "visits");
+      const unsubVisits = onSnapshot(visitsRef, (snapshot) => {
+        if (!snapshot.empty) {
+          const list = snapshot.docs.map((d) => d.data());
+          setVisits(list.sort((a, b) => b.timestamp.localeCompare(a.timestamp)));
+        }
+      }, (err) => console.error("Visits listener error:", err));
+      unsubscribers.push(unsubVisits);
+
+      // One-time fetch: Passcode (security config)
+      getDocs(collection(db, "config")).then(async (configSnapshot) => {
+        if (configSnapshot.empty) {
+          await setDoc(doc(db, "config", "security"), { passcode: "admin123" });
+          setPasscode("admin123");
+        } else {
+          setPasscode(configSnapshot.docs[0].data().passcode || "admin123");
+        }
+      }).catch((err) => console.error("Config fetch error:", err));
+
+    } catch (error) {
+      console.error("Firebase real-time sync setup failed. Falling back to local values.", error);
+    }
+
+    // Cleanup listeners on unmount
+    return () => {
+      unsubscribers.forEach((unsub) => unsub());
+    };
   }, []);
 
   // Log visitor activity on session mount
