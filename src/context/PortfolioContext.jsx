@@ -251,6 +251,11 @@ export const PortfolioProvider = ({ children }) => {
 
   // Load from Firebase Firestore on Mount with Real-Time Listeners
   useEffect(() => {
+    console.log("PortfolioContext: Firebase Configuration Status =", isFirebaseConfigured() ? "CONFIGURED ✅" : "NOT CONFIGURED ❌");
+    if (isFirebaseConfigured()) {
+      console.log("PortfolioContext: Initializing Firebase Firestore Real-Time Listeners...");
+    }
+
     if (!isFirebaseConfigured()) return;
 
     const unsubscribers = [];
@@ -259,6 +264,7 @@ export const PortfolioProvider = ({ children }) => {
       // Real-time listener: Profile
       const profileRef = collection(db, "profile");
       const unsubProfile = onSnapshot(profileRef, async (snapshot) => {
+        console.log("Firebase Event: Profile Updated. Document count =", snapshot.docs.length);
         if (snapshot.empty) {
           await setDoc(doc(db, "profile", "main"), defaultProfile);
           setProfileInfo(defaultProfile);
@@ -271,6 +277,8 @@ export const PortfolioProvider = ({ children }) => {
       // Real-time listener: Projects
       const projectsRef = collection(db, "projects");
       const unsubProjects = onSnapshot(projectsRef, async (snapshot) => {
+        const list = snapshot.docs.map((d) => d.data());
+        console.log("Firebase Event: Projects Updated. Count =", list.length);
         if (snapshot.empty) {
           for (const proj of defaultProjects) {
             await setDoc(doc(db, "projects", proj.id), proj);

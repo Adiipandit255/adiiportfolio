@@ -13,6 +13,19 @@ const firebaseConfig = {
 
 // Helper to check if Firebase is configured in the environment
 export const isFirebaseConfigured = () => {
+  const hasApiKey = !!firebaseConfig.apiKey;
+  const hasProjectId = !!firebaseConfig.projectId;
+  const hasAppId = !!firebaseConfig.appId;
+  
+  console.log("Firebase Env Check:", {
+    hasApiKey,
+    hasProjectId,
+    hasAppId,
+    apiKeyValType: typeof firebaseConfig.apiKey,
+    projectIdValType: typeof firebaseConfig.projectId,
+    appIdValType: typeof firebaseConfig.appId
+  });
+
   return !!(
     firebaseConfig.apiKey &&
     firebaseConfig.projectId &&
