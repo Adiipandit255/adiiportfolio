@@ -10,8 +10,8 @@ const RoleSelectModal = () => {
   const [selectedRole, setSelectedRole] = useState(null);
   const [loadingText, setLoadingText] = useState("");
 
-  // Hide the modal if role is already selected, or if the user is visiting the admin login page directly
-  if (visitorRole !== null || location.pathname === "/admin") return null;
+// Hide the modal if role is already selected
+  if (visitorRole !== null) return null;
 
   const roles = [
     {
@@ -81,7 +81,7 @@ const RoleSelectModal = () => {
           transition={{ duration: 0.55 }}
           className="relative max-w-3xl w-full text-center py-12 px-6 z-10"
         >
-          {/* Top Interface Tag */}
+          {/* Bottom Interface Tag */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] font-bold tracking-widest text-gray-400 uppercase mb-8">
             <Fingerprint size={12} className="text-[#00e5ff] animate-pulse" />
             <span>Secure Access Terminal</span>
@@ -149,41 +149,6 @@ const RoleSelectModal = () => {
               );
             })}
           </div>
-
-          {/* Admin Terminal Access Profile Icon */}
-          {!isAnySelected && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.4 }}
-              className="mt-10 flex justify-center"
-            >
-              <Link 
-                to="/admin" 
-                className="group flex flex-col items-center gap-2.5 transition-all duration-300"
-              >
-                <div className="w-14 h-14 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-[#00e5ff] group-hover:border-[#00e5ff]/50 group-hover:bg-[#00e5ff]/5 shadow-[0_0_15px_rgba(255,255,255,0.02)] group-hover:shadow-[0_0_25px_rgba(0,229,255,0.25)] transition-all duration-500 relative overflow-hidden">
-                  {/* Holographic scanner line pulse */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00e5ff]/10 to-transparent -translate-y-full group-hover:animate-pulse pointer-events-none" />
-                  
-                  {/* Profile SVG Icon */}
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    strokeWidth="1.5" 
-                    stroke="currentColor" 
-                    className="w-7 h-7 relative z-10 transition-transform duration-500 group-hover:scale-110"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.963-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                  </svg>
-                </div>
-                <span className="text-[10px] font-mono tracking-[4px] text-gray-500 group-hover:text-cyan-400 uppercase font-extrabold transition-colors duration-300">
-                  Admin Terminal
-                </span>
-              </Link>
-            </motion.div>
-          )}
 
           {/* INITIALIZING SYSTEM HUD ANIMATION */}
           <AnimatePresence>
