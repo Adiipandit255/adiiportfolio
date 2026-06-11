@@ -103,7 +103,7 @@ const BehindWork = () => {
                 <img
                   src={developer}
                   alt="developer"
-                  className="relative z-20 w-[150px] h-[150px] xs:w-[190px] xs:h-[190px] sm:w-[280px] sm:h-[280px] md:w-[370px] md:h-[370px] lg:w-[440px] lg:h-[440px] rounded-full object-cover border-[0.8px] border-cyan-400/80 drop-shadow-[0_0_25px_rgba(0,229,255,0.35)]"
+                  className="relative z-20 w-[150px] h-[150px] xs:w-[190px] xs:h-[190px] sm:w-[280px] sm:h-[280px] md:w-[370px] md:h-[370px] lg:w-[440px] lg:h-[440px] rounded-full object-cover object-top border-[0.8px] border-cyan-400/80 drop-shadow-[0_0_25px_rgba(0,229,255,0.35)]"
                 />
               </div>
             </div>
