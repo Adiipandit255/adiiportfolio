@@ -126,7 +126,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative bg-[#030008] text-white py-28 px-4 overflow-hidden min-h-screen"
+      className="relative bg-transparent text-white py-28 px-4 overflow-hidden min-h-screen"
       style={{ fontFamily: "'Space Grotesk', sans-serif" }}
     >
       {/* Dynamic Style Injection for Automatic Staggered Shine Sweep & Rotating Laser Borders */}

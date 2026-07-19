@@ -5,7 +5,7 @@ import Execution from "./Execution"
 const About = () => {
   return (
 
-    <div className="bg-themeBg text-themeText min-h-screen pt-28 transition-colors duration-500">
+    <div className="bg-transparent text-themeText min-h-screen pt-28 transition-colors duration-500">
 
       <WhoIAm />
 

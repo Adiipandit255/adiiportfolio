@@ -12,6 +12,7 @@ import RoleSelectModal from "./components/RoleSelectModal";
 import CustomCursor from "./components/CustomCursor";
 import AIAssistant from "./components/AIAssistant";
 import AtmosphereBackground from "./components/AtmosphereBackground";
+import AtmosphereSelector from "./components/AtmosphereSelector";
 
 function App() {
 
@@ -19,10 +20,13 @@ function App() {
 
     <BrowserRouter>
 
-      <div className="bg-themeBg text-themeText transition-colors duration-500 overflow-x-hidden min-h-screen relative">
+      <div className="text-themeText transition-colors duration-500 overflow-x-hidden min-h-screen">
 
         {/* ATMOSPHERE BACKGROUND */}
         <AtmosphereBackground />
+
+        {/* BACKGROUND TEMPLATE SELECTOR */}
+        <AtmosphereSelector />
 
         {/* CUSTOM CURSOR */}
         <CustomCursor />
